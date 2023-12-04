@@ -28,9 +28,12 @@ void color(string estilo, string color, string fondo);
 void menuSeleccion();
 void salto();
 void juego(int e);
+
 void misionNombre();
 void detalles();
+
 void nuevoInventario();
+
 void escenario1();
 void escenario2();
 void escenario3();
@@ -317,11 +320,9 @@ void detalles()
 	}
 	
 	color("0", "35", "40");
-	
 	cout << "Suministros: " << endl;
 	cout << "Objeto: " << inv.nomObjeto << endl;
 	cout << "Provision: " << inv.nomProvision << endl;
-	
 	color("0", "31", "40");
     cout << endl << " *Ingrese E para regresar al menu" << endl << endl;
     color("0", "37", "40");
@@ -535,13 +536,10 @@ void nuevoInventario()
     misionNombre();
     color("0", "37", "40");
     cout << endl << "A continuacion se muestran tus suministros: " << endl << endl;
-    
     color("0", "32", "40");
     cout << "Asistente: " << inv.nomAsistente << endl;
-
     color("0", "33", "40");
     cout << "Objeto: " << inv.nomObjeto << endl;
-
     color("0", "34", "40");
     cout << "Provision: " << inv.nomProvision << endl;
     color("0", "31", "40");
@@ -1060,6 +1058,7 @@ void final(int f)
 	limpiar();
 	cout << "La mision: ";
 	misionNombre();
+	
 	if(f == 0 || f == 1)
 	{
 		cout << "Ha sido un fracaso" << endl;
@@ -1097,6 +1096,7 @@ void final(int f)
 	color("7","37","40");
 	cout << "----------EL FIN----------" << endl << endl;
 	color("0","31","40");
+	
 	cout << endl << "Presiona Enter para regresar al menu principal..." << endl;
 	cin.get();
 	menuSeleccion();
