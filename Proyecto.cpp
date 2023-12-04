@@ -32,6 +32,8 @@ void misionNombre();
 void detalles();
 void nuevoInventario();
 void escenario1();
+void escenario2();
+void escenario3();
 
 int main()
 {
@@ -587,4 +589,356 @@ void escenario1()
    	cin.get();
    	estado = 1;
    	juego(-1);
+}
+
+void escenario2()
+{
+	switch(mision)
+	{
+		case 0:
+			misionNombre();
+			nuevoInventario();
+		break;
+		case 1:
+			misionNombre();
+			nuevoInventario();
+		break;
+		case 2:
+			misionNombre();
+			nuevoInventario();
+		break;
+	}
+	limpiar();
+	misionNombre();
+	cout << "Con tus suministros y una mision clara emprendes la mision" << endl;
+	cout << "Lo mas importante es que tienes que tener en cuenta es que la mision es larga" << endl;
+	color("7","37","40");
+	cout << "Por lo que tendras que conseguir tanques de oxigeno disponibles, tienes 3 actualmente" << endl;
+	color("0","37","40");
+	cout << "Cuidalos, en caso de que uno se rompa no hay problema pero si los 3 no sirven moriras" << endl;
+	color("0","31","40");
+	cout << endl << "Presiona Enter cuando haya comprendido la mision..." << endl;
+	cin.get();
+	estado = 2;
+    juego(-1);
+}
+
+void escenario3()
+{
+	limpiar();
+	switch(mision)
+	{
+		case 0:
+			detalles();
+			cout << "Despues de una larga jornada llegas al planeta Karou16" << endl;
+			cout << "Parece un planeta similar a la vieja tierra y con una buena atmosfera" << endl;
+			cout << "Con nostalgia miras el planeta y piensas en las formas en la que la humanidad prosperaria si la mision se completa" << endl;
+			if(inv.objeto != 3)
+			{
+				cout << endl << "Solo ahora hay oportunidad de usar tu " << inv.nomObjeto << " ya que mas adelante no se podra si abandonas la nave" << endl << endl;
+				if(inv.asistente != 3)
+				{
+					cout << "Tu Asistente te indica que hay que trabajar de inmediato" << endl;
+					cout << "Para poder completar la mision se nesesitara algo para explorar" << endl;
+					cout << "Haz algo para poder concluir tu mision:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+				else
+				{
+					cout << "Despues de varios minutos empiezas a trabajar" << endl;
+					cout << "Para poder completar la mision se nesesitara algo para explorar" << endl;
+					cout << "Haz algo para poder concluir tu mision:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+			}
+			else
+			{
+				if(inv.asistente != 3)
+				{
+					cout << "Tu Asistente te indica que hay que trabajar de inmediato" << endl;
+					cout << "Te das cuenta que no tienes mucho que hacer ya que no trajiste algo util" << endl;
+					cout << "Pero tu Asistente esta aqui y proponen varias opciones:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+				else
+				{
+					cout << "Despues de varios minutos empiezas a trabajar" << endl;
+					cout << "Una vez despues de pensar te das cuenta que no tienes mucho que hacer" << endl;
+					cout << "No trajiste el equipamiento adecuado, pero hay algunas alternativas:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+			}
+		break;
+		case 1:
+			detalles();
+			cout << "Despues de una larga jornada llegas al planeta Inye23" << endl;
+			cout << "Como se sospechaba, es un planeta ocupado por seres inteligentes con mayor avance, habra que ser precavido" << endl;
+			cout << "Tu eres muy cauteloso por lo que es una buena idea para poder establecer un contacto amistoso" << endl;
+			if(inv.objeto != 3)
+			{
+				cout << "Solo ahora hay oportunidad de usar tu " << inv.nomObjeto << " ya que mas adelante no se podra si abandonas la nave" << endl;
+				if(inv.asistente != 3)
+				{
+					cout << "Tu Asistente te indica que hay que trabajar de inmediato" << endl;
+					cout << "Para poder completar la mision se nesesitara algo para explorar" << endl;
+					cout << "Haz algo para poder concluir tu mision:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+				else
+				{
+					cout << "Despues de varios minutos empiezas a trabajar" << endl;
+					cout << "Para poder completar la mision se nesesitara algo para explorar" << endl;
+					cout << "Haz algo para poder concluir tu mision:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+			}
+			else
+			{
+				if(inv.asistente != 3)
+				{
+					cout << "Tu Asistente te indica que hay que trabajar de inmediato" << endl;
+					cout << "Te das cuenta que no tienes mucho que hacer ya que no trajiste algo util" << endl;
+					cout << "Pero tu Asistente esta aqui y proponen varias opciones:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+				else
+				{
+					cout << "Despues de varios minutos empiezas a trabajar" << endl;
+					cout << "Una vez despues de pensar te das cuenta que no tienes mucho que hacer" << endl;
+					cout << "No trajiste el equipamiento adecuado, pero hay algunas alternativas:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+			}
+		break;
+		case 2:
+			detalles();
+			cout << "Despues de una larga jornada llegas al planeta Cour58" << endl;
+			cout << "Se ve un planeta muy desolado, ya usado por el ser humano, algo inservible y proximo destino de la humanidad" << endl;
+			cout << "Piensas que con todo esto se ha podido dar una oportunidad a tu especie, solo hay que completar la mision" << endl;
+			if(inv.objeto != 3)
+			{
+				cout << "Solo ahora hay oportunidad de usar tu " << inv.nomObjeto << " ya que mas adelante no se podra si abandonas la nave" << endl;
+				if(inv.asistente != 3)
+				{
+					cout << "Tu Asistente te indica que hay que trabajar de inmediato" << endl;
+					cout << "Para poder completar la mision se nesesitara algo para explorar" << endl;
+					cout << "Haz algo para poder concluir tu mision:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+				else
+				{
+					cout << "Despues de varios minutos empiezas a trabajar" << endl;
+					cout << "Para poder completar la mision se nesesitara algo para explorar" << endl;
+					cout << "Haz algo para poder concluir tu mision:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+			}
+			else
+			{
+				if(inv.asistente != 3)
+				{
+					cout << "Tu Asistente te indica que hay que trabajar de inmediato" << endl;
+					cout << "Te das cuenta que no tienes mucho que hacer ya que no trajiste algo util" << endl;
+					cout << "Pero tu Asistente esta aqui y proponen varias opciones:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+				else
+				{
+					cout << "Despues de varios minutos empiezas a trabajar" << endl;
+					cout << "Una vez despues de pensar te das cuenta que no tienes mucho que hacer" << endl;
+					cout << "No trajiste el equipamiento adecuado, pero hay algunas alternativas:" << endl;
+					cout << "(1) Abandonar la Mision" << endl;
+					cout << "(2) Usar tu " << inv.nomObjeto << endl;
+					cout << "(3) Utilizar tu provision: " << inv.nomProvision << endl;
+				}
+			}
+		break;
+	}
+	
+	getline(cin, texto);
+    istringstream iss(texto);
+    	
+    if(texto == "E" || texto == "e")
+    {
+    	menuSeleccion();
+        return;
+	}
+    
+    if (!(iss >> seleccion)) 
+	{
+    	limpiar();
+       	color("0", "31", "40");
+        cout << "Error: Ingrese un dato valido" << endl << endl;
+        cout << "Presiona Enter para continuar..." << endl;
+        cin.get();
+        escenario3();
+        return;
+	}
+	
+	limpiar();
+	detalles();
+	
+	switch(mision)
+	{
+		case 0:
+			switch(seleccion)
+			{
+				case 1:
+				final(1);
+				return;
+				break;
+				case 2:
+					if(inv.objeto == 1 || inv.objeto == 2)
+					{
+						cout << "Grandioso plan, preparas tu " << inv.nomObjeto << " , fue una buena idea decidir traerlo" << endl;
+					}
+					else
+					{
+						cout << "Sin gran cosa lees tu libro, despues de cierto tiempo te relajas" << endl;
+						cout << "Ahora te sientes con mas tranquilidad, puedes tomar una buena desicion ahora" << endl;
+						cout << "Observas tu entorno y aprecias lo que parece un diminuto Robot Aereo" << endl;
+						cout << "Sin pensarlo mas lo usas para continuar la misison" << endl;
+						inv.nomObjeto = "Robot Aereo";
+					}
+				break;
+				case 3:
+					if(inv.provision == 1 || inv.provision == 2)
+					{
+						cout << "Despues de usar tu provision te sientes mejor, recuperas fuerzas" << endl;
+						cout << "Sin duda podria ser un gran avance para la mision" << endl;
+						inv.provision = 5;
+					}
+					else
+					{
+						cout << "Despues de usar tu provsion te sientes mejor, te das cuenta que las baterias no sirven" << endl;
+						cout << "El paquete podria estar defectuoso, te sientes frustado" << endl;
+					}
+				break;
+				default:
+                	limpiar();
+                	color("0", "31", "40");
+                	cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                	cout << "Presiona Enter para continuar...";
+                	cin.get();
+                	escenario3();
+                	return;
+			}
+		break;
+		case 1:
+			switch(seleccion)
+			{
+				case 1:
+				final(1);
+				return;
+				break;
+				case 2:
+					if(inv.objeto == 1 || inv.objeto == 2)
+					{
+						cout << "Grandioso plan, preparas tu " << inv.nomObjeto << " , fue una buena idea decidir traerlo" << endl;
+					}
+					else
+					{
+						cout << "Sin gran cosa lees tu libro, despues de cierto tiempo te relajas" << endl;
+						cout << "Ahora te sientes con mas tranquilidad, puedes tomar una buena desicion ahora" << endl;
+						cout << "Observas tu entorno y aprecias lo que parece un diminuto Robot Aereo" << endl;
+						cout << "Sin pensarlo mas lo usas para continuar la misison" << endl;
+						inv.nomObjeto = "Robot Aereo";
+					}
+				break;
+				case 3:
+					if(inv.provision == 1 || inv.provision == 2)
+					{
+						cout << "Despues de usar tu provision te sientes mejor, recuperas fuerzas" << endl;
+						cout << "Sin duda podria ser un gran avance para la mision" << endl;
+						inv.provision = 5;
+					}
+					else
+					{
+						cout << "Despues de usar tu provsion te sientes mejor, te das cuenta que las baterias no sirven" << endl;
+						cout << "El paquete podria estar defectuoso, te sientes frustado" << endl;
+					}
+				break;
+				default:
+                	limpiar();
+                	color("0", "31", "40");
+                	cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                	cout << "Presiona Enter para continuar...";
+                	cin.get();
+                	escenario3();
+                	return;
+			}
+			break;
+		case 2:
+			switch(seleccion)
+			{
+				case 1:
+				final(1);
+				return;
+				break;
+				case 2:
+					if(inv.objeto == 1 || inv.objeto == 2)
+					{
+						cout << "Grandioso plan, preparas tu " << inv.nomObjeto << " , fue una buena idea decidir traerlo" << endl;
+					}
+					else
+					{
+						cout << "Sin gran cosa lees tu libro, despues de cierto tiempo te relajas" << endl;
+						cout << "Ahora te sientes con mas tranquilidad, puedes tomar una buena desicion ahora" << endl;
+						cout << "Observas tu entorno y aprecias lo que parece un diminuto Robot Aereo" << endl;
+						cout << "Sin pensarlo mas lo usas para continuar la misison" << endl;
+						inv.nomObjeto = "Robot Aereo";
+					}
+				break;
+				case 3:
+					if(inv.provision == 1 || inv.provision == 2)
+					{
+						cout << "Despues de usar tu provision te sientes mejor, recuperas fuerzas" << endl;
+						cout << "Sin duda podria ser un gran avance para la mision" << endl;
+						inv.provision = 5;
+					}
+					else
+					{
+						cout << "Despues de usar tu provsion te sientes mejor, te das cuenta que las baterias no sirven" << endl;
+						cout << "El paquete podria estar defectuoso, te sientes frustado" << endl;
+					}
+				break;
+				default:
+                	limpiar();
+                	color("0", "31", "40");
+                	cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                	cout << "Presiona Enter para continuar...";
+                	cin.get();
+                	escenario3();
+                	return;
+			}
+			break;
+		break;
+	}
+	color("0", "31", "40");
+    cout << "Presiona Enter para continuar..." << endl;
+    cin.get();
+	estado = 3;
+    juego(-1);
 }
