@@ -30,6 +30,7 @@ void salto();
 void juego(int e);
 void misionNombre();
 void detalles();
+void nuevoInventario();
 
 int main()
 {
@@ -320,4 +321,236 @@ void detalles()
     cout << endl << " *Ingrese E para regresar al menu" << endl << endl;
     color("0", "37", "40");
     cout << "-------------------------------------------" << endl << endl;
+}
+
+void nuevoInventario()
+{
+    if (inv.asistente == -1)
+    {
+        limpiar();
+        color("0", "37", "40");
+        cout << "Antes de emprender tu mision, recoje algunos suministros para el viaje" << endl;
+        cout << "Elige un asistente para la mision" << endl;
+        cout << "No hay mucho espacio en la nave debido a que se necesita mayor capacidad de combustible, se precavido" << endl << endl;
+        color("0", "31", "40");
+        cout << endl << " *Ingrese E para regresar al menu" << endl << endl;
+        color("0", "37", "40");
+        color("7", "37", "40");
+        cout << "Selecciona un ayudante segun el numero: " << endl << endl;
+        misionNombre();
+        color("0", "32", "40");
+        cout << endl << " *(1)La Astronauta Rachel Dinn, excelente piloto de aeronaves y tecnica especializada" << endl;
+        color("0", "33", "40");
+        cout << " *(2)El Perro Rock, entrenado para localizacion de objetos y defensa" << endl;
+        color("0", "34", "40");
+        cout << " *(3)Solo" << endl;
+        color("0", "37", "40");
+
+        getline(cin, texto);
+    	istringstream iss(texto);
+    	
+    	if(texto == "E" || texto == "e")
+        {
+        	menuSeleccion();
+        	return;
+		}
+    
+    	if (!(iss >> seleccion)) 
+		{
+        	limpiar();
+        	color("0", "31", "40");
+        	cout << "Error: Ingrese un dato valido" << endl << endl;
+        	cout << "Presiona Enter para continuar...";
+        	cin.get();
+        	nuevoInventario();
+        	return;
+    	
+		}
+        switch (seleccion)
+        {
+            case 1:
+                inv.asistente = 1;
+                inv.nomAsistente = "Asistente Rachel";
+            break;
+            case 2:
+                inv.asistente = 2;
+                inv.nomAsistente = "Asistente Rock";
+                break;
+            case 3:
+                inv.asistente = 3;
+                inv.nomAsistente = "Solo";
+            break;
+            default:
+                limpiar();
+                color("0", "31", "40");
+                cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                cout << "Presiona Enter para continuar...";
+                cin.get();
+                nuevoInventario();
+                return;
+            }
+        }
+    
+
+    if (inv.objeto == -1)
+    {
+        limpiar();
+        color("0", "37", "40");
+        cout << "Antes de emprender tu mision, recoje algunos suministros para el viaje" << endl;
+        cout << "Elige un objeto para la mision" << endl;
+        cout << "No hay mucho espacio en la nave debido a que se necesita mayor capacidad de combustible, se precavido" << endl << endl;
+        color("0", "31", "40");
+        cout << endl << " *Ingrese E para regresar al menu" << endl << endl;
+        color("0", "37", "40");
+        color("7", "37", "40");
+        cout << "Selecciona un objeto segun el numero: " << endl << endl;
+        misionNombre();
+        color("0", "32", "40");
+        cout << endl << " *(1)Dron, una forma eficiente para recopilar datos" << endl;
+        color("0", "33", "40");
+        cout << " *(2)Robot Terrestre, es perfecto para analizar el entorno" << endl;
+        color("0", "34", "40");
+        cout << " *(3)Libro, por si te sientes aburrido" << endl;
+        color("0", "37", "40");
+                
+        getline(cin, texto);
+    	istringstream iss(texto);
+    	
+    	if(texto == "E" || texto == "e")
+        {
+        	menuSeleccion();
+        	return;
+		}
+    
+    	if (!(iss >> seleccion)) 
+		{
+        	limpiar();
+        	color("0", "31", "40");
+        	cout << "Error: Ingrese un dato valido" << endl << endl;
+        	cout << "Presiona Enter para continuar...";
+        	cin.get();
+        	nuevoInventario();
+        	return;
+		}
+		
+        switch (seleccion)
+        {
+            case 1:
+                inv.objeto = 1;
+                inv.nomObjeto = "Dron";
+                break;
+            case 2:
+                inv.objeto = 2;
+                inv.nomObjeto = "Robot Terrestre";
+            break;
+            case 3:
+                inv.objeto = 3;
+                inv.nomObjeto = "Libro";
+            break;
+            default:
+                limpiar();
+                color("0", "31", "40");
+                cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                cout << "Presiona Enter para continuar...";
+                cin.get();
+                nuevoInventario();
+                return;
+        
+        }
+	}
+
+    if (inv.provision == -1)
+    {
+        limpiar();
+        color("0", "37", "40");
+        cout << "Antes de emprender tu mision, recoje algunos suministros para el viaje" << endl;
+        cout << "Elige provisiones para la mision" << endl;
+        cout << "No hay mucho espacio en la nave debido a que se necesita mayor capacidad de combustible, se precavido" << endl << endl;
+        color("0", "31", "40");
+        cout << endl << " *Ingrese E para regresar al menu" << endl << endl;
+        color("0", "37", "40");
+        color("7", "37", "40");
+        cout << "Selecciona una provision segun el numero: " << endl << endl;
+        misionNombre();
+        color("0", "32", "40");
+        cout << endl << " *(1)Comida, perfecta para largas jornadas de trabajo" << endl;
+        color("0", "33", "40");
+        cout << " *(2)Kit Medico, auxiliar para cualquier ocacion" << endl;
+        color("0", "34", "40");
+        cout << " *(3)Bateria Extra, nunca se sabe que podria pasar, parece el empaque en mal estado" << endl;
+        color("0", "37", "40");
+                
+        getline(cin, texto);
+    	istringstream iss(texto);
+    	
+    	if(texto == "E" || texto == "e")
+        {
+        	menuSeleccion();
+        	return;
+		}
+    
+    	if (!(iss >> seleccion)) 
+		{
+        	limpiar();
+        	color("0", "31", "40");
+        	cout << "Error: Ingrese un dato valido" << endl << endl;
+        	cout << "Presiona Enter para continuar...";
+        	cin.get();
+        	nuevoInventario();
+        	return;
+		}
+		
+        switch (seleccion)
+        {
+            case 1:
+                inv.provision = 1;
+                inv.nomProvision = "Comida";
+                break;
+            case 2:
+                inv.provision = 2;
+                inv.nomProvision = "Kit Medico";
+            break;
+        	case 3:
+                inv.provision = 3;
+                inv.nomProvision = "Bateria Extra";
+            break;
+            default:
+                limpiar();
+                color("0", "31", "40");
+                cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                cout << "Presiona Enter para continuar...";
+                cin.get();
+                nuevoInventario();
+                return;
+        
+        }
+    }
+
+    limpiar();
+    misionNombre();
+    color("0", "37", "40");
+    cout << endl << "A continuacion se muestran tus suministros: " << endl << endl;
+    
+    color("0", "32", "40");
+    cout << "Asistente: " << inv.nomAsistente << endl;
+
+    color("0", "33", "40");
+    cout << "Objeto: " << inv.nomObjeto << endl;
+
+    color("0", "34", "40");
+    cout << "Provision: " << inv.nomProvision << endl;
+    color("0", "31", "40");
+    cout << endl << "Presiona Enter cuando hayas visto tus suministros o Ingrese R para volver a elejirlos..." << endl;
+    
+    getline(cin, texto);
+    istringstream iss(texto);
+    	
+    if(texto == "R" || texto == "r")
+    {
+        inv.asistente = -1;
+        inv.objeto = -1;
+        inv.provision = -1;
+        nuevoInventario();
+        return;
+	}
 }
