@@ -28,6 +28,8 @@ void color(string estilo, string color, string fondo);
 void menuSeleccion();
 void salto();
 void juego(int e);
+void misionNombre();
+void detalles();
 
 int main()
 {
@@ -264,4 +266,58 @@ void juego(int e)
 			escenario4();
 		break;
 	}
+}
+
+void misionNombre()
+{
+	switch(mision)
+	{
+		case 0:
+			color("7","37","40");
+			cout << "\tMision: Kep168" << endl;
+			color("0","37","40");
+		break;
+		case 1:
+			color("7","37","40");
+			cout << "\tMision: Forg326" << endl;
+			color("0","37","40");
+		break;
+		case 2:
+			color("7","37","40");
+			cout << "\tMision: Urn548" << endl;
+			color("0","37","40");
+		break;
+	}
+}
+
+void detalles()
+{
+	misionNombre();
+	cout << "Tanques: ";
+	switch(tanques)
+	{
+		case 1:
+			color("0", "31", "40");
+			cout << "O" << endl << endl;
+		break;
+		case 2:
+			color("0", "33", "40");
+			cout << "O O" << endl << endl;
+		break;
+		case 3:
+			color("0", "32", "40");
+			cout << "O O O" << endl << endl;
+		break;
+	}
+	
+	color("0", "35", "40");
+	
+	cout << "Suministros: " << endl;
+	cout << "Objeto: " << inv.nomObjeto << endl;
+	cout << "Provision: " << inv.nomProvision << endl;
+	
+	color("0", "31", "40");
+    cout << endl << " *Ingrese E para regresar al menu" << endl << endl;
+    color("0", "37", "40");
+    cout << "-------------------------------------------" << endl << endl;
 }
