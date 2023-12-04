@@ -31,6 +31,7 @@ void juego(int e);
 void misionNombre();
 void detalles();
 void nuevoInventario();
+void escenario1();
 
 int main()
 {
@@ -553,4 +554,37 @@ void nuevoInventario()
         nuevoInventario();
         return;
 	}
+}
+
+void escenario1()
+{
+	cout << "En un futuro lejano la tierra ha sufrido una contaminacion generada por el ser humano" << endl;
+	cout << "Eres el atronauta Robert Larson, fuiste asignado a una mision en la Nasa" << endl << endl;
+	cout << "Datos de la mision: " << endl;
+	srand(time(NULL));
+	int random = rand()%3;
+	mision = random;
+	switch(random)
+	{
+		case 0:
+			misionNombre();
+			cout << "\t*Nesesitamos obtener datos de un planeta que se ha encontrado un planeta posiblemente habitable" << endl;
+			cout << "\t*Viaja hacia ese planeta y obten una muestra para evaluar la sustentabilidad" << endl;
+		break;
+		case 1:
+			misionNombre();
+			cout << "\t*Encuentra una civilizacion en un planeta que parece que hay vida" << endl;
+			cout << "\t*Intenta comunicarte e informar nuestra situacion, si funciona esto seria nuestra unica esperanza" << endl;
+		break;
+		case 2:
+			misionNombre();
+			cout << "\t*Ubica y trae la nave Mark2005 que ha terminado de ser ensamblada con los recursos del planeta COUR58" << endl;
+			cout << "\t*Llevala a la estacion espacial para poder empezar a abordar a la gente, esta nave se encuentra en la orbita de dicho planeta" << endl;
+		break;
+	}
+	color("0","31","40");
+	cout << endl << "Presiona Enter cuando haya comprendido la mision..." << endl;
+   	cin.get();
+   	estado = 1;
+   	juego(-1);
 }
