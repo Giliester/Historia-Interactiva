@@ -35,6 +35,7 @@ void escenario1();
 void escenario2();
 void escenario3();
 void escenario4();
+void final(int f);
 
 int main()
 {
@@ -1052,4 +1053,51 @@ void escenario4()
 			}
     	break;
 	}
+}
+
+void final(int f)
+{
+	limpiar();
+	cout << "La mision: ";
+	misionNombre();
+	if(f == 0 || f == 1)
+	{
+		cout << "Ha sido un fracaso" << endl;
+		switch(f)
+		{
+			case 0:
+				cout << "Has Muerto, aparece una desolacion para el ser humano" << endl;
+				cout << "Despues de poco tiempo la humanidad perece" << endl;
+			break;
+			case 1:
+				cout << "Te retiraste de la mision, fuiste destituido y exiliado, seras remplazado" << endl;
+			break;
+		}
+		
+	}
+	else
+	{
+		cout << "Ha sido Completada Exitosamente" << endl;
+		switch(f)
+		{
+			case 2:
+				cout << "Has tenido lo suficiente para poder finalizar la mision, buen trabajo" << endl;
+				cout << "Al parecer la humanidad tiene una luz de esperanza nuevamente" << endl;
+			break;
+			case 3:
+				cout << "Has hecho un gran trabajo, fuiste una opcion exepcional" << endl;
+				cout << "Al parecer la humanidad tiene una luz de esperanza nuevamente" << endl;
+			break;
+			case 4:
+				cout << "Debido a tu trabajo, seras premiado por una mision ejecutada perfectamente" << endl;
+				cout << "Al parecer la humanidad tiene una luz de esperanza nuevamente" << endl;
+			break;
+		}			
+	}
+	color("7","37","40");
+	cout << "----------EL FIN----------" << endl << endl;
+	color("0","31","40");
+	cout << endl << "Presiona Enter para regresar al menu principal..." << endl;
+	cin.get();
+	menuSeleccion();
 }
