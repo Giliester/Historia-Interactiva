@@ -34,6 +34,7 @@ void nuevoInventario();
 void escenario1();
 void escenario2();
 void escenario3();
+void escenario4();
 
 int main()
 {
@@ -941,4 +942,114 @@ void escenario3()
     cin.get();
 	estado = 3;
     juego(-1);
+}
+
+void escenario4()
+{
+    limpiar();
+    tanques--;
+    detalles();
+    cout << "Nivel de Oxigeno decayendo" << endl << endl;
+    switch (mision)
+    {
+    	case 0:
+    		switch(seleccion)
+    		{
+    			case 1:
+    				final(1);
+    			break;
+    			case 2:
+    				cout << "Despues de desplegar tu " << inv.nomObjeto << " hacia el planeta admiras que el planeta tiene una variada fauna" << endl;
+    				cout << "Parece un lugar prometedor" << endl;
+    				cout << "Tomas la muestra del planeta y Regresas a la estacion espacial" << endl;
+    				color("0", "31", "40");
+    				cout << "Presiona Enter para continuar..." << endl;
+    				cin.get();
+    				final(4);
+    			break;
+    			case 3:
+    				cout << "Despues de usar tu provision no hay mucho que hacer, una accion sin sentido, decides regresar" << endl;
+    				cout << "Llegando al planeta informas que el planeta si puede alvergar vida pero no traes lo que se te pidio" << endl;
+    				color("0", "31", "40");
+    				cout << "Presiona Enter para continuar..." << endl;
+    				cin.get();
+    				final(2);
+    			break;
+				default:
+                	limpiar();
+                	color("0", "31", "40");
+                	cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                	cout << "Presiona Enter para continuar...";
+                	cin.get();
+                	escenario4();
+                	return;	
+			}
+    	break;
+    	case 1:
+    		switch(seleccion)
+    		{
+    			case 1:
+    				final(1);
+    			break;
+    			case 2:
+    				cout << "Despues de desplegar tu " << inv.nomObjeto << " hacia el planeta ves una forma de vida inteligente" << endl;
+    				cout << "Le entregas un disco con informacion del ser humano, parecen amigables y toman la nota" << endl;
+    				cout << "Regresas a la estacion espacial, puede que puedan ayudar despues de todo" << endl;
+    				color("0", "31", "40");
+    				cout << "Presiona Enter para continuar..." << endl;
+    				cin.get();
+    				final(4);
+    			break;
+    			case 3:
+    				cout << "Despues de usar tu provision no hay mucho que hacer, una accion sin sentido, decides regresar" << endl;
+    				cout << "Intentas llegar a la estacion espacial y no puedes llegar a ella, te pierdes" << endl;
+    				color("0", "31", "40");
+    				cout << "Presiona Enter para continuar..." << endl;
+    				cin.get();
+    				final(1);
+    			break;
+				default:
+                	limpiar();
+                	color("0", "31", "40");
+                	cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                	cout << "Presiona Enter para continuar...";
+                	cin.get();
+                	escenario4();
+                	return;	
+			}
+    	break;
+    	case 2:
+    		switch(seleccion)
+    		{
+    			case 1:
+    				final(1);
+    			break;
+    			case 2:
+    				cout << "Gracias a que desplegaste tu " << inv.nomObjeto << " interceptas la nave y accedes a ella" << endl;
+    				cout << "Ingresas las coordenadas de nuestro sistema solar para regresar la nave" << endl;
+    				cout << "Despues de cierto tiempo llegas con la nave intacta" << endl;
+    				color("0", "31", "40");
+    				cout << "Presiona Enter para continuar..." << endl;
+    				cin.get();
+    				final(4);
+    			break;
+    			case 3:
+    				cout << "Despues de usar tu provision no hay mucho que hacer, una accion sin sentido, decides regresar" << endl;
+    				cout << "Te quedas varado en la nave, se quedo sin gasolina" << endl;
+    				color("0", "31", "40");
+    				cout << "Presiona Enter para continuar..." << endl;
+    				cin.get();
+    				final(0);
+    			break;
+				default:
+                	limpiar();
+                	color("0", "31", "40");
+                	cout << "Error: No hay una opcion segun el numero: (" << seleccion << ") intentelo nuevamente" << endl << endl;
+                	cout << "Presiona Enter para continuar...";
+                	cin.get();
+                	escenario4();
+                	return;	
+			}
+    	break;
+	}
 }
